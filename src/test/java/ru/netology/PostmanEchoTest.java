@@ -18,16 +18,16 @@ public class PostmanEchoTest {
                 .statusCode(200)
                 .body("data", equalTo("Ivan")); // проверка, что в поле data находятся отправленные данные
     }
-//    @Test
-//    public void testPostRequestWithDifferentBody() {
-//        // Этот тест должен упасть, так как мы отправляем одни данные, а проверяем другие
-//        given()
-//                .baseUri("https://postman-echo.com")
-//                .body("Ivan")
-//                .when()
-//                .post("/post")
-//                .then()
-//                .statusCode(200)
-//                .body("data", equalTo("Vasya")); // Здесь намеренная ошибка для демонстрации fail
-//    }
+    @Test
+    public void testPostRequestWithDifferentBody() {
+        // Этот тест должен упасть, так как мы отправляем одни данные, а проверяем другие
+        given()
+                .baseUri("https://postman-echo.com")
+                .body("Ivan")
+                .when()
+                .post("/post")
+                .then()
+                .statusCode(200)
+                .body("data", equalTo("Vasya")); // Здесь намеренная ошибка для демонстрации fail
+    }
 }
